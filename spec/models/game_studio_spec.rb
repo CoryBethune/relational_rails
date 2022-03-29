@@ -11,4 +11,12 @@ RSpec.describe GameStudio, type: :model do
     it { should allow_value(true).for(:still_active)}
     it { should allow_value(false).for(:still_active)}
   end
+
+  describe 'class methods' do
+
+  end
+
+  describe 'instance methods' do
+
+  end
 end
