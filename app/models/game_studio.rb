@@ -4,4 +4,8 @@ class GameStudio < ApplicationRecord
   validates_presence_of :name
   validates_presence_of :game_count
   validates :still_active, inclusion: [true, false]
+
+  def self.sort_by_created_at
+    GameStudio.order(created_at: :desc)
+  end
 end
