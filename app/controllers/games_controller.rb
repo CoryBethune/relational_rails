@@ -9,11 +9,11 @@ class GamesController < ApplicationController
 
   def show_by_parent_id
     @games = Game.all
-
-    @games.find_all do |game|
-      game[:game_studio_id] == params[:game_studio_id]
+    @game = @games.find_all do |game|
+      game[:game_studio_id] == params[:id].to_i
     end
-    
+
+    return @game
   end
 
 
