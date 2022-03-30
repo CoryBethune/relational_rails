@@ -9,4 +9,12 @@ RSpec.describe "links" do
     expect(current_path).to eq("/games")
   end
 
+  it 'links to the game studios index' do
+    visit '/games'
+
+    click_link('Game Studio Index')
+
+    expect(current_path).to eq('/game_studios')
+  end
+
 end
