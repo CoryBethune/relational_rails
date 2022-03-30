@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe GameStudio, type: :feature do
 
   before (:each) do
-    @studio1 = GameStudio.create!(name: 'SquareSoft', still_active: true, game_count: 10)
-    @studio2 = GameStudio.create!(name: 'Bethesda', still_active: false, game_count: 20)
+    @studio1 = GameStudio.create!(name: 'SquareSoft', still_active: true)
+    @studio2 = GameStudio.create!(name: 'Bethesda', still_active: false)
   end
 
   it 'shows the game studios by id' do

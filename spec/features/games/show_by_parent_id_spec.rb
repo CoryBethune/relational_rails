@@ -8,10 +8,6 @@ RSpec.describe Game, type: :feature do
     @game = @studio1.games.create!(name: 'FFVII', still_in_production: true, hours_of_gameplay: 100)
   end
 
-  # As a visitor
-  # When I visit '/parents/:parent_id/child_table_name'
-  # Then I see each Child that is associated with that Parent with each Child's attributes:
-
   it 'shows the game studios by id' do
     visit "/game_studios/#{@studio1.id}/games"
 

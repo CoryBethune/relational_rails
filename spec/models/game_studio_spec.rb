@@ -7,7 +7,7 @@ RSpec.describe GameStudio, type: :model do
 
   describe "validations" do
     it { should validate_presence_of :name}
-    it { should validate_presence_of :game_count}
+    # it { should validate_presence_of :game_count}
     it { should allow_value(true).for(:still_active)}
     it { should allow_value(false).for(:still_active)}
   end
@@ -22,6 +22,15 @@ RSpec.describe GameStudio, type: :model do
   end
 
   describe 'instance methods' do
+    it 'sets the game count equal to the games of the studio' do
+      @studio1 = GameStudio.create!(name: 'SquareSoft', still_active: true, game_count: 0, created_at: '1999-03-01')
 
+      @studio1.games.create!(name: 'FFVII', still_in_production: true, hours_of_gameplay: 100)
+      @studio1.games.create!(name: 'FFX', still_in_production: false, hours_of_gameplay: 200)
+
+      @studio1.game_count
+      
+      expect(@studio1.games.count).to eq 2
+    end
   end
 end

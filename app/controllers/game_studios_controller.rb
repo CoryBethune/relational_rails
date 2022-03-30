@@ -6,6 +6,8 @@ class GameStudiosController < ApplicationController
 
   def show
     @studio = GameStudio.find(params[:id])
+    @game_count = @studio.count_of_games
   end
+
 
 end

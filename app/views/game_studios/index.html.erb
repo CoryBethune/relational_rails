@@ -1,5 +1,6 @@
 <h1>Game Studios</h1>
-<% #binding.pry %>
-<% @studios.each do |studio| %>
-<h2><%= studio.name %></h2>
+
+<% @studios.sort_by_created_at.each do |studio| %>
+<h2><%= studio.name %> has made <%= studio.game_count %> games.</h2>
+
 <% end %>
